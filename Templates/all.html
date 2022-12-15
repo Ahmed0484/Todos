@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}todos{% endblock title %}
+
+{% block body %}
+<h1>Todos</h1>
+<ul class="list-group">
+    {% for i in object_list %}
+    <li class="list-group-item" style="background-color:rgba(255,255,255,.4);padding: 10px;">
+        <h3>{{i.text|slice:50}}</h3> <a class="btn btn-secondary" href="/todo/{{i.id}}">View detail</a>
+    </li>
+    {% endfor %}
+</ul>
+<h4>{% include 'pagination.html' %}</h4>
+{% endblock body %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}delete{% endblock title %}
+
+{% block body %}
+<h1>Delete Todo</h1>
+<form method="post">
+    {% csrf_token %}
+    <h4 style="color:white;">Are you sure you want to delete "{{object.text}}"?</h4>
+    <input class="btn btn-danger" type="submit" value="Confirm"> <a class="btn btn-success" href="{% url 'all' %}">Cancel</a>
+</form>
+{% endblock body %}

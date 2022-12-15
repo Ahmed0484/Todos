@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}details{% endblock title %}
+
+{% block body %}
+<h3>{{object.text}}</h3>
+<h4>
+    <a class="btn btn-warning" href="/edit/{{object.id}}">Edit</a>
+    <a class="btn btn-danger" href="/delete/{{object.id}}">Delete</a>
+</h4>
+{% endblock body %}
